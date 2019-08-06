@@ -1,10 +1,24 @@
 package chancehalo.me;
 
+import java.util.Scanner;
+
 public class Main {
 
+
     public static void main(String[] args) {
-        double result = add(5, 2);
-        System.out.println(result);
+        Scanner scanner = new Scanner(System.in);
+
+        boolean running = true;
+        while (running) {
+            String input = scanner.nextLine();
+            switch (input) {
+                case "q":
+                    System.out.println("Goodbye");
+                    running = false;
+                default: System.out.println("Not a valid command...");
+            }
+        }
+
     }
 
     public static double add(double x, double y) {
