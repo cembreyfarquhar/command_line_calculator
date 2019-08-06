@@ -11,5 +11,11 @@ public class Main {
         return x + y;
     }
 
-    public static int subtract
+    public static int subtract(int x, int y) {
+        return x - y;
+    }
+
+    public static double divide(int x, int y) {
+        return (double) x / (double) y;
+    }
 }
