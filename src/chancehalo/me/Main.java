@@ -8,14 +8,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        String xInput;
+        String operInput;
+        String yInput;
+
         boolean running = true;
         while (running) {
             String input = scanner.nextLine();
-            switch (input) {
-                case "q":
-                    System.out.println("Goodbye");
-                    running = false;
-                default: System.out.println("Not a valid command...");
+            if (input.equals("q")) {
+                System.out.println("Goodbye!");
+                running = false;
+            } else if (input.split(" ").length == 3) {
+                // valid format for an expression
+            } else {
+                System.out.println("Please enter a valid expression");
             }
         }
 
