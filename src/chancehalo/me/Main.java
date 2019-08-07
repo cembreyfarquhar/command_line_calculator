@@ -20,11 +20,36 @@ public class Main {
                 running = false;
             } else if (input.split(" ").length == 3) {
                 // valid format for an expression
+                if (!isNumber(input.split(" ")[0]) || !isNumber(input.split(" ")[2])) {
+                    System.out.println("not a valid number");
+                } else {
+                    // numbers are valid
+                    if (isValidOperator(input.split(" ")[1])) {
+                        // operator is valid
+
+                    }
+                }
+                System.out.println("Good");
             } else {
                 System.out.println("Please enter a valid expression");
             }
         }
 
+    }
+
+    private static boolean isValidOperator(String s) {
+        if (s.equals("+") || s.equals("-")|| s.equals("*")|| s.equals("/") || s.equals("%")) {
+            return true;
+        } else return false;
+    }
+
+    public static boolean isNumber(String x) {
+        try {
+            double d = Double.parseDouble(x);
+        } catch (NumberFormatException | NullPointerException nfe) {
+            return false;
+        }
+        return true;
     }
 
     public static double add(double x, double y) {
