@@ -11,6 +11,9 @@ public class Main {
         String xInput;
         String operInput;
         String yInput;
+        Double result;
+        Double xValue;
+        Double yValue;
 
         boolean running = true;
         while (running) {
@@ -23,13 +26,34 @@ public class Main {
                 if (!isNumber(input.split(" ")[0]) || !isNumber(input.split(" ")[2])) {
                     System.out.println("not a valid number");
                 } else {
+                    xValue = Double.parseDouble(input.split(" ")[0]);
+                    yValue = Double.parseDouble(input.split(" ")[2]);
                     // numbers are valid
                     if (isValidOperator(input.split(" ")[1])) {
                         // operator is valid
-
+                        operInput = input.split(" ")[1];
+                        System.out.println("Good");
+                        switch (operInput) {
+                            case "+":
+                                result = add(xValue, yValue);
+                                break;
+                            case "-":
+                                result = subtract(xValue, yValue);
+                                break;
+                            case "*":
+                                result = multiply(xValue, yValue);
+                                break;
+                            case "/":
+                                result = divide(xValue, yValue);
+                                break;
+                            default:
+                                result = 0.0;
+                        }
+                        System.out.println("RESULT: " + result);
+                    } else {
+                        System.out.println("Please enter a valid operator");
                     }
                 }
-                System.out.println("Good");
             } else {
                 System.out.println("Please enter a valid expression");
             }
